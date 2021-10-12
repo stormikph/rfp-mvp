@@ -2,7 +2,6 @@ var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 const webpack = require('webpack');
-// var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: ['regenerator-runtime/runtime.js', `${SRC_DIR}/index.js`],
