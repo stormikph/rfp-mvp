@@ -1,1 +1,1 @@
-# rfp-mvp
+# MVP

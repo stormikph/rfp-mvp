@@ -1,0 +1,37 @@
+{
+  "name": "rfp-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack --config ./webpack.config.js --mode development -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stormikph/rfp-mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stormikph/rfp-mvp/issues"
+  },
+  "homepage": "https://github.com/stormikph/rfp-mvp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "nodemon": "^2.0.13",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.22.0",
+    "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
