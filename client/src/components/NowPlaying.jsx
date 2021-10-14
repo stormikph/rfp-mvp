@@ -1,20 +1,12 @@
 import React from 'react';
 import '../Styles/NowPlaying.scss';
 
-const NowPlaying = ({nowPlaying, getNowPlaying, getUser, getUsersPlaylist}) => {
-
-  const handleGetNowPlaying = () => {
-    getNowPlaying();
-    getUser();
-    // getUsersPlaylist();
-  }
+const NowPlaying = ({nowPlaying, getNowPlaying, getUser, getUsersPlaylist, userInfo}) => {
 
   return (
     <div className='now-playing'>
-      <button
-        id="now-playing-btn"
-        onClick={() => handleGetNowPlaying()}
-        >Check Now Playing</button>
+      <div id="username">{userInfo.username}</div>
+
       {nowPlaying.albumArt ?
         <div><img id="album-art" src={ nowPlaying.albumArt } style={{ height: 300 }}/></div>
       :

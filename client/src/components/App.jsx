@@ -15,8 +15,7 @@ class App extends React.Component {
     if (token) spotifyApi.setAccessToken(token);
     this.state = {
       loggedIn: token ? true : false,
-      userID: '',
-      username: '',
+      userInfo: {userID: '', username: '', image: ''},
       nowPlaying: {
         name: 'Nothing playing...',
         albumArt: '',
@@ -43,8 +42,11 @@ class App extends React.Component {
     .then(data => {
       this.setState({
         ...this.state,
-        userID: `${data.id}`,
-        username: `${data.display_name}`
+        userInfo: {
+          userID: data.id,
+          username: data.display_name,
+          // image: data.image[0] || ''
+        }
       });
     }, function(err) {
       console.log('Failure to getUser', err);
@@ -66,22 +68,34 @@ class App extends React.Component {
     })
   }
 
-  // getUsersPlaylist = () => {
-  //   const {userID} = this.state;
-  //   spotifyApi.getUserPlaylists()
-  //   .then(data => {
-  //     console.log('Retrieved playlists', data.body);
-  //   },function(err) {
-  //     console.log('Failure to getUserPlaylist', err);
-  //   });
-  // }
+  getUsersPlaylist = () => {
+    const {userID} = this.state;
+    spotifyApi.getUserPlaylists()
+    .then(data => {
+      console.log('Retrieved playlists', data.body);
+    },function(err) {
+      console.log('Failure to getUserPlaylist', err);
+    });
+  }
+
+  handleGetNowPlaying = () => {
+    this.getNowPlaying();
+    this.getUser();
+  }
 
   render() {
-    const { loggedIn, nowPlaying, playlist } = this.state;
+    const { loggedIn, nowPlaying, userInfo } = this.state;
     return (
       <div className='app'>
         <div id="header">
+          {loggedIn ?
+          <button
+          id="now-playing-btn"
+          onClick={() => this.handleGetNowPlaying()}
+          >Check Now Playing</button>
+          :
           <h3>stormi's mvp</h3>
+        }
         </div>
         <div id="canvas">
           {loggedIn ?
@@ -89,11 +103,8 @@ class App extends React.Component {
             <NowPlaying
               nowPlaying={nowPlaying}
               getNowPlaying={this.getNowPlaying}
-              // getUsersPlaylist={this.getUsersPlaylist}
+              userInfo={userInfo}
               getUser={this.getUser}
-              />
-            <Playlist
-              playlist={playlist}
               />
           </div>
           :
