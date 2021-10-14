@@ -92,7 +92,7 @@ class App extends React.Component {
           <button
           id="now-playing-btn"
           onClick={() => this.handleGetNowPlaying()}
-          >Check Now Playing</button>
+          >Check What's Playing</button>
           :
           <h3>stormi's mvp</h3>
         }

@@ -5,7 +5,7 @@
 }
 
 #header {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   height: 70px;
   display:flex;
   justify-content: center;
@@ -16,10 +16,17 @@
 
 #now-playing-btn {
   height: 40px;
-  width: 175px;
+  width: 210px;
   border-radius: 5px;
   font-size: large;
   font-weight: 900;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0, 56, 0, 0.7);
+  border: none;
+  &:hover {
+    background-color: rgba(2, 88, 2, 0.7);
+  }
 }
 
 #canvas {
@@ -39,7 +46,7 @@ canvas{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   margin: 25px 50px;
 }
