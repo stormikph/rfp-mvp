@@ -1,12 +1,19 @@
 import React from 'react';
-import SpotifyWebApi from 'spotify-web-api-js';
 
+import '../Styles/Login.scss';
+
+import SpotifyWebApi from 'spotify-web-api-js';
 const spotifyApi = new SpotifyWebApi();
 
-const Login = () => {
+const Login = ({getUser}) => {
+
+  const handleGetUser = () => {
+    getUser();
+  }
+
   return (
-    <div className='login'>
-      <a href='http://localhost:8888'> Login to Spotify </a>
+    <div id="login">
+      <a href='http://localhost:8888' onClick={() => handleGetUser}> Login to Spotify </a>
     </div>
   )
 }

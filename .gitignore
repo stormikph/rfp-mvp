@@ -4,6 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 config.js
 spotifyWebApi.js
+bundle.js
 
 # User-specific files
 *.rsuser

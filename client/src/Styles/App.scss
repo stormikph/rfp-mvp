@@ -1,0 +1,36 @@
+//$variable-name: #color;
+
+.app {
+  color: white;
+}
+
+#header {
+  background-color: black;
+  height: 70px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+#canvas {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://external-preview.redd.it/Tf2MC-orVRAI8OL5tjyF4k4H2Q6QLHTWllekGfqdt3c.png?width=960&crop=smart&auto=webp&s=be4ab9a2fa3ca2f7011799377f118a8dbc64aacb');
+  position: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+canvas{
+  filter: blur(1px);
+}
+
+.music-scope {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  margin: 25px;
+}

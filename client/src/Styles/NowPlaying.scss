@@ -1,0 +1,28 @@
+.now-playing {
+  display: flex;
+  flex-direction: column;
+  // background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  // margin: 25px;
+  padding: 20px 20px 20px 50px;
+}
+
+#now-playing-btn {
+  height: 30px;
+  width: 150px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#np-name {
+ font-size: 20px;
+}
+
+#np-artist {
+  font-size: 20px;
+}
+
+#album-art {
+  margin-bottom: 20px;
+  border-radius: 15px;
+}

@@ -1,20 +1,27 @@
 import React from 'react';
-import SpotifyWebApi from 'spotify-web-api-js';
-const spotifyApi = new SpotifyWebApi();
+import '../Styles/NowPlaying.scss';
 
-const NowPlaying = () => {
-  const {nowPlaying, getNowPlaying} = this.props;
+const NowPlaying = ({nowPlaying, getNowPlaying, getUser, getUsersPlaylist}) => {
 
-  handleGetNowPlaying = () => {
-    getNowPlaying()
+  const handleGetNowPlaying = () => {
+    getNowPlaying();
+    getUser();
+    // getUsersPlaylist();
   }
 
   return (
     <div className='now-playing'>
-      <button onClick={() => this.handleGetNowPlaying()}>Check Now Playing</button>
-      <div> Now Playing: { nowPlaying.name } </div>
-      <div> {nowPlaying.artist }</div>
-      <div> <img src={ nowPlaying.albumArt } id="album-art"/> </div>
+      <button
+        id="now-playing-btn"
+        onClick={() => handleGetNowPlaying()}
+        >Check Now Playing</button>
+      {nowPlaying.albumArt ?
+        <div><img id="album-art" src={ nowPlaying.albumArt } style={{ height: 300 }}/></div>
+      :
+        <div><img id="album-art" src={ nowPlaying.albumArt }/></div>
+      }
+      <div id="np-name">{ nowPlaying.name }</div>
+      <div id="np-artist">{ nowPlaying.artist }</div>
     </div>
   )
 }
